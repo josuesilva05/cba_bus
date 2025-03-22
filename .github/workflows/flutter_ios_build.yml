@@ -10,27 +10,28 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest  # Usa o runner do macOS
-    
+    runs-on: macos-latest  # Necessário para build de iOS
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Clone repository
+        uses: actions/checkout@v4
 
-      - name: Setup Flutter
+      - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.29.2'  # Defina a versão do Flutter que você deseja
+          channel: stable
+          flutter-version: '3.29.2'  # Defina a versão desejada
 
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Run tests
+        run: flutter test
+
       - name: Build iOS
-        run: flutter build ios --release  # Compila o app para iOS
-  
+        run: flutter build ios --release --no-codesign
+
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2.3.1
         with:
           name: ios-build
           path: build/ios/iphoneos/Runner.app
-  
-
