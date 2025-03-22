@@ -26,9 +26,11 @@ jobs:
 
       - name: Build iOS
         run: flutter build ios --release  # Compila o app para iOS
-
+  
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2.3.1
         with:
           name: ios-build
           path: build/ios/iphoneos/Runner.app
+  
+
