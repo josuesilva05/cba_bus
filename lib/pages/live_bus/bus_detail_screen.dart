@@ -25,16 +25,7 @@ class BusDetailScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.directions_bus, size: 50, color: Colors.blue),
-              SizedBox(height: 16),
-              Text(
-                "Linha: $nomeLinha",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: isDarkMode ? Colors.white : Colors.black,
-                ),
-              ),
+
               SizedBox(height: 16),
               Text(
                 "ID: $busId",

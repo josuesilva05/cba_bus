@@ -8,6 +8,8 @@ import 'pages/pontos/pontos_screen.dart';
 import 'pages/live_bus/live_bus_screen.dart';
 import 'pages/itnerarios/itnerarios_screen.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 void main() {
   setupLocator();
   runApp(MyApp());
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorKey,
       theme: ThemeData(
         textTheme: GoogleFonts.interTextTheme(),
         brightness: Brightness.light,
