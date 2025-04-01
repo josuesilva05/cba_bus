@@ -100,7 +100,10 @@ class _LiveBusScreenState extends State<LiveBusScreen> {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(9.0),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 10.0,
+                ),
                 child: Row(
                   children: [
                     Expanded(
